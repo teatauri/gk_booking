@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  admin: one
+  start_date: 2020-03-02 15:57:13
+  end_date: 2020-03-02 15:57:13
+  description: MyString
+  budget: 1
+  guests: 1
+  email: MyString
+  phone_number: MyString
+
+two:
+  admin: two
+  start_date: 2020-03-02 15:57:13
+  end_date: 2020-03-02 15:57:13
+  description: MyString
+  budget: 1
+  guests: 1
+  email: MyString
+  phone_number: MyString
