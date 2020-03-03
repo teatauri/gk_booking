@@ -28,18 +28,16 @@ ActiveRecord::Schema.define(version: 2020_03_02_160206) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "admin_id", null: false
     t.integer "status_id", null: false
     t.datetime "start_date"
     t.datetime "end_date"
-    t.string "description"
+    t.string "location"
     t.integer "budget"
     t.integer "guests"
+    t.string "name"
     t.string "email"
-    t.string "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["admin_id"], name: "index_bookings_on_admin_id"
     t.index ["status_id"], name: "index_bookings_on_status_id"
   end
 
@@ -59,6 +57,5 @@ ActiveRecord::Schema.define(version: 2020_03_02_160206) do
 
   add_foreign_key "booking_items", "bookings"
   add_foreign_key "booking_items", "menu_items"
-  add_foreign_key "bookings", "admins"
   add_foreign_key "bookings", "statuses"
 end

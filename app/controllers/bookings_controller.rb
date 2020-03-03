@@ -1,65 +1,37 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_booking, only: [:update, :destroy]
 
-  # GET /bookings
-  # GET /bookings.json
+
   def index
     @bookings = Booking.all
   end
 
-  # GET /bookings/1
-  # GET /bookings/1.json
-  def show
-  end
-
-  # GET /bookings/new
   def new
     @booking = Booking.new
   end
 
-  # GET /bookings/1/edit
-  def edit
-  end
-
-  # POST /bookings
-  # POST /bookings.json
   def create
     @booking = Booking.new(booking_params)
-
-    respond_to do |format|
+    @status = Status.create(state: "pending")
+    @booking.status = @status 
       if @booking.save
-        format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
-        format.json { render :show, status: :created, location: @booking }
+        flash[:success] = "Booking request was successfully created!"
+        redirect_to bookings_submitted_path
       else
-        format.html { render :new }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
+        flash[:error] = "Something went wrong"
+        render 'new'
       end
-    end
   end
 
-  # PATCH/PUT /bookings/1
-  # PATCH/PUT /bookings/1.json
   def update
-    respond_to do |format|
-      if @booking.update(booking_params)
-        format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
-        format.json { render :show, status: :ok, location: @booking }
-      else
-        format.html { render :edit }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
-  # DELETE /bookings/1
-  # DELETE /bookings/1.json
   def destroy
     @booking.destroy
-    respond_to do |format|
-      format.html { redirect_to bookings_url, notice: 'Booking was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
+
+  def submitted 
+  end 
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -69,6 +41,7 @@ class BookingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def booking_params
-      params.require(:booking).permit(:admin_id, :start_date, :end_date, :description, :budget, :guests, :email, :phone_number)
+      params.require(:booking).permit(:start_date, :end_date, :status_id, :location, :budget, :guests, :name, :email)
     end
 end
+

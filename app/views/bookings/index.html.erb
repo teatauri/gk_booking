@@ -1,41 +1,21 @@
-<p id="notice"><%= notice %></p>
+<h1> Check Our Availability </h1>
+<p> Hello! Planning a party, corporate event, or general hullaballoo, and in the mood for some plant-based Thai goodness? </p>
+<p> Say no more - select your date/s to check our availability, and submit the booking form. We'll get back to you
+ASAP! </p>
 
-<h1>Bookings</h1>
+<p><%= button_to "Create Booking Request", bookings_path, :method => :get %> </p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Admin</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Description</th>
-      <th>Budget</th>
-      <th>Guests</th>
-      <th>Email</th>
-      <th>Phone number</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= month_calendar(attribute: :start_date, end_attribute: :end_date, events: @bookings) do |date, bookings| %>
+  <%= date %>
 
-  <tbody>
-    <% @bookings.each do |booking| %>
-      <tr>
-        <td><%= booking.admin_id %></td>
-        <td><%= booking.start_date %></td>
-        <td><%= booking.end_date %></td>
-        <td><%= booking.description %></td>
-        <td><%= booking.budget %></td>
-        <td><%= booking.guests %></td>
-        <td><%= booking.email %></td>
-        <td><%= booking.phone_number %></td>
-        <td><%= link_to 'Show', booking %></td>
-        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
-        <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% bookings.each do |booking| %>
+    <div>
+      <%= "Date" %><br>
+      <%= "Unavailable" %><br>
+    </div>
+  <% end %>
+<% end %>
 
-<br>
 
-<%= link_to 'New Booking', new_booking_path %>
+
+

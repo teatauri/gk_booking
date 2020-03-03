@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :bookings
 
   root to: 'bookings#index'
   get '/bookings/new', to: 'bookings#new', as: 'bookings'
-  post '/bookings', to: 'bookings#create'
+  post '/bookings/new', to: 'bookings#create'
+
+  get 'bookings/submitted', to: 'bookings#submitted', as: 'bookings_submitted'
 
   get '/admin', to: 'admin#login', as: 'admin_login'
   post '/admin', to: 'admin#confirmed'
