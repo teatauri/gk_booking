@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:update, :destroy]
+  # before_action :booking_params, only: [:create]
 
 
   def index
@@ -18,7 +19,7 @@ class BookingsController < ApplicationController
         flash[:success] = "Booking request was successfully created!"
         redirect_to bookings_submitted_path
       else
-        flash[:error] = "Something went wrong"
+        flash[:error] = @booking.errors.full_messages
         render 'new'
       end
   end
@@ -32,6 +33,7 @@ class BookingsController < ApplicationController
 
   def submitted 
   end 
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
