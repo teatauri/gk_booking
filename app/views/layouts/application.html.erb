@@ -4,12 +4,44 @@
     <title>GkBooking</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+  <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <header>
+      <header>
+      <div class="container">
+        <!-- mobile nav button -->
+        <div class="menu">
+          <div class="bar"></div>
+        </div>
+        <!-- Navigation Bar -->
+        <nav>
+          <h1 class="brand">
+            <a href="<%= login_path%>"><span>Greedy</span> Khao</a>
+          </h1>
+          <ul>
+            <li><a href="<%= login_path%>">Home</a></li>
+            <li><a href="<%= booking_path%>">Bookings</a></li>
+            <li><a href="<%= upcoming_events_path%>">Events</a></li>
+            <li><a href="<%= logout_path%>" data-method="POST">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <br>
+    <br>
+    <br>
     <%= yield %>
+    <br>
+    <footer>
+      <p>&copy;Greedy Khao 2020</p>
+    </footer>
+
   </body>
 </html>

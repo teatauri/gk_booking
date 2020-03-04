@@ -5,14 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Admin.create(password: "12345")
+b = Admin.create()
+b.name = "ben"
+b.password = 'hello'
+b.save
 
-Status.create(state: "pending")
-Status.create(state: "accepted")
+Status.create(state: "Pending")
+Status.create(state: "Accepted")
+Status.create(state: "Pending")
 
 
 Booking.create(admin_id: 1, start_date: Time.now, end_date: Time.now, description: "Wedding", budget: 1000, guests: 100, email: "lee@lee.com", phone_number: "12345678910", status_id: 1  )
 Booking.create(admin_id: 1, start_date: Time.now, end_date: Time.now, description: "Disco", budget: 2000, guests: 200, email: "lee@otherlee.com", phone_number: "12345978910", status_id: 2 )
+Booking.create(admin_id: 1, start_date: Time.now, end_date: Time.now, description: "Party", budget: 3000, guests: 300, email: "lee@otherotherlee.com", phone_number: "12875978910", status_id: 3 )
+
 
 MenuItem.create(img_url: "http:food1.com", description: "A lovely green curry", name: "green curry")
 MenuItem.create(img_url: "http:food2.com", description: "A lovely red curry", name: "red curry")

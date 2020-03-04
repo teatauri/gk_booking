@@ -1,0 +1,18 @@
+<h2>Admin Login</h2>
+
+<% if !session[:admin_id] %>
+<%= form_for :admin, url: login_path do |f| %>
+<br>
+ Name: <%= f.text_field :name %>
+ Password: <%= f.password_field :password %>
+  <br>
+  <%= f.submit 'Login' %>
+<% end %>
+
+<% else %>
+<br>
+<p>You're already logged in dummy</p>
+<br>
+<%= link_to 'Bookings', booking_path  %>
+
+<% end %>

@@ -13,7 +13,8 @@
 ActiveRecord::Schema.define(version: 2020_03_02_160206) do
 
   create_table "admins", force: :cascade do |t|
-    t.string "password"
+    t.string "name"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

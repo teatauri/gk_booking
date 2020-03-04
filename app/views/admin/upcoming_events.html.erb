@@ -1,0 +1,11 @@
+<h1>Upcoming events</h1>
+<% @upcoming_bookings.each{|b| %>
+
+<h3>Booking Description</h3>
+<p><%= b.description %></p>
+<h5>contact Details</h5>
+<p>Email: <%= b.email %></p>
+<p>Phone: <%= b.phone_number %></p>
+<br>
+
+<% } %>
