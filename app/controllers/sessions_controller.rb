@@ -1,11 +1,14 @@
 class SessionsController < ApplicationController
 
-    def new
+    def login
+      if !session[:admin_id]
         @admin = Admin.new
+      else
+        redirect_to '/'
+      end
     end
   
     def create
-        pp params
       admin = Admin.find_by(name: params[:admin][:name])
   
       admin = admin.try(:authenticate, params[:admin][:password])
@@ -16,7 +19,7 @@ class SessionsController < ApplicationController
       
   
       @admin = admin
-  
+      
       redirect_to booking_path
     end
   

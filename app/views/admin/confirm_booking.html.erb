@@ -3,11 +3,11 @@
 <%= link_to 'Scheduled Events', upcoming_events_path%>
 <br>
 <% @open_bookings.each {|b| %>
-<h3>Booking Description</h3>
-<p><%= b.description %></p>
+<h3>Customer</h3>
+<p><%= b.name %></p>
 <h5>contact Details</h5>
 <p>Email: <%= b.email %></p>
-<p>Phone: <%= b.phone_number %></p>
+<p>Location: <%= b.location %></p>
 <br>
 <%= button_to 'Accept Booking Request', confirm_event_path(b) %>
 <br>

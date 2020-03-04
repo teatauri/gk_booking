@@ -15,9 +15,9 @@ Status.create(state: "Accepted")
 Status.create(state: "Pending")
 
 
-Booking.create(admin_id: 1, start_date: Time.now, end_date: Time.now, description: "Wedding", budget: 1000, guests: 100, email: "lee@lee.com", phone_number: "12345678910", status_id: 1  )
-Booking.create(admin_id: 1, start_date: Time.now, end_date: Time.now, description: "Disco", budget: 2000, guests: 200, email: "lee@otherlee.com", phone_number: "12345978910", status_id: 2 )
-Booking.create(admin_id: 1, start_date: Time.now, end_date: Time.now, description: "Party", budget: 3000, guests: 300, email: "lee@otherotherlee.com", phone_number: "12875978910", status_id: 3 )
+Booking.create(start_date: Time.now, end_date: Time.now, location: "Wedding", budget: 1000, guests: 100, email: "lee@lee.com", name: "lee1", status_id: 1  )
+Booking.create(start_date: Time.now, end_date: Time.now, location: "Disco", budget: 2000, guests: 200, email: "lee@otherlee.com", name: "lee2", status_id: 2 )
+Booking.create(start_date: Time.now, end_date: Time.now, location: "Party", budget: 3000, guests: 300, email: "lee@otherotherlee.com", name: "lee3", status_id: 3 )
 
 
 MenuItem.create(img_url: "http:food1.com", description: "A lovely green curry", name: "green curry")

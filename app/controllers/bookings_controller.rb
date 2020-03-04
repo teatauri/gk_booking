@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @status = Status.create(state: "pending")
+    @status = Status.create(state: "Pending")
     @booking.status = @status 
       if @booking.save
         flash[:success] = "Booking request was successfully created!"
