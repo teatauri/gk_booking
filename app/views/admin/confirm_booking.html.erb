@@ -11,7 +11,7 @@
 <br>
 <%= button_to 'Accept Booking Request', confirm_event_path(b) %>
 <br>
-<%= button_to 'Delete Booking Request', destroy_event_path(b)%>
+<%= button_to 'Delete Booking Request', destroy_event_path(b), :method => :delete%>
 
 <% } %>
 <br>

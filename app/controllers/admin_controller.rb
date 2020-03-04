@@ -32,7 +32,7 @@ class AdminController < ApplicationController
     def destroy_event
         event = Booking.find(params[:id])
         event.destroy
-        redirect_to confirm_event_path
+        redirect_to '/'
     end
 
 end

@@ -23,14 +23,16 @@
         <!-- Navigation Bar -->
         <nav>
           <h1 class="brand">
-            <a href="<%= login_path%>"><span>Greedy</span> Khao</a>
+            <a href="/"><span>Greedy</span> Khao</a>
           </h1>
+          <% if session[:admin_id] %>
           <ul>
             <li><a href="<%= login_path%>">Home</a></li>
             <li><a href="<%= booking_path%>">Bookings</a></li>
             <li><a href="<%= upcoming_events_path%>">Events</a></li>
             <li><a href="<%= logout_path%>" data-method="POST">Logout</a></li>
           </ul>
+          <% end %>
         </nav>
       </div>
     </header>
