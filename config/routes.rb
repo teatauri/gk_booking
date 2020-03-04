@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  root to: 'bookings#index'
+  root to: 'bookings#index', as: 'calendar'
   get '/bookings/new', to: 'bookings#new', as: 'bookings'
-  post '/bookings', to: 'bookings#create'
+  post '/bookings/new', to: 'bookings#create'
+
+  get 'bookings/submitted', to: 'bookings#submitted', as: 'bookings_submitted'
 
   get '/admin', to: 'sessions#login', as: 'login'
   post '/admin', to: 'sessions#create', as: 'login_confirm'
