@@ -1,18 +1,14 @@
-<h2>Admin Login</h2>
-
-<% if !session[:admin_id] %>
+<div class="con-height">
+<div class="login-card">
+<div class="login-form">
+<h2 class="login-title"><span>Admin Login</span></h2>
 <%= form_for :admin, url: login_path do |f| %>
 <br>
  Name: <%= f.text_field :name %>
  Password: <%= f.password_field :password %>
   <br>
-  <%= f.submit 'Login' %>
+  <%= f.submit 'Login', class: "btn-alt" %>
 <% end %>
-
-<% else %>
-<br>
-<p>You're already logged in dummy</p>
-<br>
-<%= link_to 'Bookings', booking_path  %>
-
-<% end %>
+</div>
+</div>
+</div>

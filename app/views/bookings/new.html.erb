@@ -1,46 +1,50 @@
 
-<h1>Booking Request Form</h1>
 
 
 <% if flash[:error] %> 
-<%= flash[:error] %>
+<div class="error-text"><%= flash[:error][0] %><img src="https://uc4af195dbb524e1d090d5adc4c7.previews.dropboxusercontent.com/p/thumb/AAsUlNLiVoq2sJAUAiL-iNetCz8S_8W0uJ1vm0dDKoko-I4NFU3M0-KFzju0_LECXWjmIr7OvNpAhaDHKcL02wzuuTzD6bg3dX58thSMYsCBIfnXp9qTpdPFA_-bqy6ELz9m6fqn67dJy4N7WDBTarTpFsL0iiNo_fN4SPgoVEJ-6pZw1RM82UQsdO2UyMoO9_AC2BywzwKmgYkFVKMvIKYtsb8gQRFfev-jgaZ7vpRYD2yHXEyXdNw_7HxWNsezSaJ6sydI8HSRvwQh0J-j4p65wRTvkNNht_WqIj-4dquOV91P7hNltzpJKXH1bKh0OHlN_AUXcpVUixv0ACKqU93QndahDvgAPvE0OHhBECE5nszi8gxK5dbcVsSaPaBOSnOambC4pwcC70DCSWLtQlcf2ej-OIgV4cvT6piBRlxqNA/p.png?fv_content=true&size_mode=5"></div>
 <%end%>
 
-
+<div class="container">
+<div class="booking-flex">
+<div class="booking-form">
 <%= form_for @booking do |f| %>
 
+  <h1 class="book-title">Booking Request:</h1>
+  <br>
+  <br>
   <div class="field">
-    <%= f.label :start_date %>
+    <%= f.label 'Start date:' %>
     <%= f.date_select :start_date %>
   </div>
 
   <div class="field">
-    <%= f.label :end_date %>
+    <%= f.label 'End date:' %>
     <%= f.date_select :end_date %>
   </div>
 
   <div class="field">
-    <%= f.label "Number of Guests" %>
+    <%= f.label "Number of Guests:" %>
     <%= f.number_field :guests %>
   </div>
 
   <div class="field">
-    <%= f.label "Approximate Budget" %>
+    <%= f.label "Approximate Budget:" %>
     <%= f.number_field :budget %>
   </div>
 
   <div class="field">
-    <%= f.label "Event Location" %>
+    <%= f.label "Event Location:" %>
     <%= f.text_field :location %>
   </div>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label 'Name:' %>
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :email %>
+    <%= f.label 'Email:' %>
     <%= f.text_field :email %>
   </div>
 
@@ -48,6 +52,11 @@
     <%= f.submit "Submit Enquiry" %>
   </div>
 <% end %>
+</div>
+<div class="khao-logo">
+  <img src="https://uc072a1ceaa1909acfcf7e1a385e.previews.dropboxusercontent.com/p/thumb/AAvx1peVj6Hkl4mn4Obau1PuEN0r7WW1ZZwMwD5R36Dh2WsUJfQ8ewcl-DElhRIJg2f9iKu4l1fPL44tYKpvcFvqmpTtCPYM9vXb6ifcsnKET2ZxmqsKFzCdEWw9e5_8E0N8C_V0-hGC3EOmtRe5nH3JiMNW5ywF5jRD2xHNTvslh8gJzrz5vMzdtBHHgQULjF_s_v4v4X0Ggv-nrQjQ8gwDTquXXVcIImYauCndJB1Uu_dY8NcyiyQAdx_lXQIi9MB1vUL7dJG7sSu78TB5rh63ZuAk8IyrvDwpJzUcBXagn6OwmA54rXY00FJrlzBhO_5-0ue-Q6fAoce4QHXEq_Shb1ceC8Us9_ebt-YBlgZs159uNtggAmicF3lOLT7BFWADxcUq9MQwKzxzMo9tzOIqTEhZFK0xMfgVGtWHhDy_Nf8nzUxvHz4EKKv8j4xrKuk/p.png?fv_content=true&size_mode=5" alt="logo">
+</div>
+</div>
+</div>
 
-
-<%= link_to 'Back', calendar_path %>
+<%= link_to 'Back', calendar_path, class: 'btn-sm' %>

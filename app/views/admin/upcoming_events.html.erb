@@ -1,11 +1,13 @@
-<h1>Upcoming events</h1>
+<h1 class="up-title">Upcoming <span>Events</span></h1>
+<div class="grid-wrap">
 <% @upcoming_bookings.each{|b| %>
-
+<div class="info-flex">
 <h3>Customer Details</h3>
-<p><%= b.name %></p>
+<p class="flow-text"><%= b.name %></p>
 <h5>contact Details</h5>
-<p>Email: <%= b.email %></p>
-<p>Location: <%= b.location %></p>
-<br>
-
+<p class="flow-text">Email: <%= b.email %></p>
+<p class="flow-text">Location: <%= b.location %></p>
+<p class="flow-text">Date: <%= b.start_date %></p>
+</div>
 <% } %>
+</div>

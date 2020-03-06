@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
 
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.all.select {|b| b.status.state == "Accepted"}
   end
 
   def new

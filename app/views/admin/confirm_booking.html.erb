@@ -1,19 +1,23 @@
-<h1>Your Booking Requests</h1>
-<br>
-<%= link_to 'Scheduled Events', upcoming_events_path%>
-<br>
-<% @open_bookings.each {|b| %>
-<h3>Customer</h3>
-<p><%= b.name %></p>
-<h5>contact Details</h5>
-<p>Email: <%= b.email %></p>
-<p>Location: <%= b.location %></p>
-<br>
-<%= button_to 'Accept Booking Request', confirm_event_path(b) %>
-<br>
-<%= button_to 'Delete Booking Request', destroy_event_path(b), :method => :delete%>
+<div class="con-book-con">
 
+<h1 class="up-title">Your <span>Booking Requests</span></h1>
+<br>
+<br>
+<div class="grid-wrap">
+<% @open_bookings.each {|b| %>
+<div class="info-flex">
+<h3 class="info-title">Customer</h3>
+<p class="flow-text"><%= b.name %></p>
+<h5 class="info-title">Contact Details</h5>
+<p class="flow-text">Email: <%= b.email %></p>
+<p class="flow-text">Location: <%= b.location %></p>
+<p class="flow-text">Date: <%= b.start_date %></p>
+<br>
+<div class="des-btn">
+<%= button_to 'Accept', confirm_event_path(b), class: 'request-btn' %>
+<%= button_to 'Delete', destroy_event_path(b), :method => :delete, class: 'request-btn'%>
+</div>
+</div>
 <% } %>
-<br>
-<br>
-<%= button_to 'Logout', logout_path %>
+</div>
+</div>

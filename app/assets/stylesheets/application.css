@@ -29,6 +29,10 @@ html {
   font-size: 10px;
 }
 
+span {
+  color: purple;
+}
+
 a {
   text-decoration: none;
 }
@@ -185,4 +189,242 @@ footer p {
 
 /* footer end */
 
-/* admin styles */
+/* booking styles */
+
+.booking-head {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "helvetica";
+  width: 100%;
+  text-align: center;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.btn {
+  border: 1.5px solid rgba(0, 0, 0, 0.8);
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  text-align: center;
+  background-color: #eee;
+  font-size: 2rem;
+  margin: 2rem 0;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.btn-alt {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  background-color: #eee;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.btn:hover,
+.btn-alt:hover {
+  color: #eee;
+  background-color: purple;
+}
+
+.p-color {
+  color: purple;
+}
+
+.table-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.date-table {
+  width: 80%;
+  margin: auto;
+}
+
+/* booking request styles */
+
+.booking-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.booking-form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.booking-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  background-color: purple;
+  color: white;
+  padding: 3rem 7rem;
+  border-radius: 5rem;
+}
+
+.booking-form form h1 {
+  font-family: "Roboto";
+  font-size: 4rem;
+  font-weight: 100;
+}
+
+.khao-logo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-sm {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  text-align: center;
+  margin: 2rem;
+  display: block;
+  width: 10%;
+  transition: 0.5s;
+}
+
+.btn-sm:hover {
+  color: #eee;
+  background-color: purple;
+}
+
+/* login page */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* admin requested bookings page */
+
+.con-book-con {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.grid-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 3rem;
+}
+
+.info-flex {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid black;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 2rem;
+}
+
+.info-title {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+.flow-text {
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+
+.request-btn {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  margin: 0.8rem 1rem;
+  background-color: #eee;
+  transition: 0.5s;
+}
+.request-btn-alt {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  margin: 1rem 1rem;
+  background-color: #eee;
+  transition: 0.5s;
+}
+.request-btn:hover {
+  color: #eee;
+  background-color: purple;
+}
+
+.des-btn {
+  display: flex;
+}
+
+/* upcoming events page */
+
+.up-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 100;
+}
+
+/* admin login page*/
+
+.login-title {
+  margin: 1rem;
+  font-weight: 100;
+}
+
+.login-card {
+  width: 40%;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  margin: auto;
+  box-shadow: 1px 1px 1rem rgba(0, 0, 0, 0.4);
+}
+
+.con-height {
+  height: 70vh;
+}
+
+.cool-font {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 2rem;
+}
+
+.error-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: crimson;
+  margin-left: 20rem;
+}
+
+.error-text img {
+  height: 5rem;
+  width: 5rem;
+}
